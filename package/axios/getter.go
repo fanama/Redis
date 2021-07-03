@@ -10,8 +10,8 @@ import (
 
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
-func Get(url string, target interface{}) error {
-	r, err := myClient.Get(url)
+func Get(address string, target interface{}) error {
+	r, err := myClient.Get(address)
 	if err != nil {
 		return err
 	}
@@ -28,6 +28,8 @@ func Post(address string, target interface{}, data url.Values) error {
 		log.Fatal(err)
 	}
 	defer r.Body.Close()
+
+	json.NewDecoder(r.Body).Decode(target)
 
 	return json.NewDecoder(r.Body).Decode(target)
 

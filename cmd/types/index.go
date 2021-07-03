@@ -5,6 +5,10 @@ type Response struct {
 	Length int    `json:"length"`
 }
 
-type LoginInfos struct {
-	Success bool `json:"success"`
+type TestPost struct {
+	Success string `json:"success"`
+}
+
+type IP struct {
+	Origin string `json:"origin"`
 }
