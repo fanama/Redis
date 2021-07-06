@@ -1,33 +1,33 @@
 package main
 
 import (
-	"fmt"
-	"net/url"
-
-	"github.com/fanama/Redis/cmd/types"
-	"github.com/fanama/Redis/package/axios"
+	_ "github.com/fanama/Redis/package/cache"
 )
 
 func main() {
 
-	url1 := "https://catfact.ninja/fact"
-	url11 := "https://httpbin.org/ip"
-	url2 := "https://reqbin.com/echo/post/json"
-	postData := url.Values{}
+	// // test axios
 
-	// url.Values{"id": {"8"}}
+	// url1 := "https://catfact.ninja/fact"
+	// url11 := "https://httpbin.org/ip"
+	// url2 := "https://reqbin.com/echo/post/json"
+	// postData := url.Values{}
 
-	resp1 := new(types.Response)
-	resp11 := new(types.IP)
-	resp2 := new(types.TestPost)
+	// // url.Values{"id": {"8"}}
 
-	axios.Get(url1, &resp1)
-	axios.Get(url11, &resp11)
+	// resp1 := new(types.Response)
+	// resp11 := new(types.IP)
+	// resp2 := new(types.TestPost)
 
-	axios.Post(url2, &resp2, postData)
+	// axios.Get(url1, &resp1)
+	// axios.Get(url11, &resp11)
 
-	fmt.Println("resp1 : ", resp1)
-	fmt.Println("resp11 : ", resp11)
-	fmt.Println("resp2 : ", resp2)
+	// axios.Post(url2, &resp2, postData)
+
+	// fmt.Println("resp1 : ", resp1)
+	// fmt.Println("resp11 : ", resp11)
+	// fmt.Println("resp2 : ", resp2)
+
+	// test redis
 
 }
