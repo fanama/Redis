@@ -27,7 +27,7 @@ func init() {
 	// }
 	// fmt.Println("key", val)
 
-	lentgh, err := rdb.LPush("mylist", []string{"test", "2"}).Result()
+	lentgh, err := rdb.RPush("mylist", []string{"this", "is", "me"}).Result()
 
 	if err != nil {
 		panic(err)
