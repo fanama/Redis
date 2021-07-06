@@ -1,17 +1,5 @@
 # example of cache with redis
 
-## Redis list
-
-```sh
-> rpush mylist A
-> rpush mylist B
-> lpush mylist first
-> lrange mylist 0 -1
-1) "first"
-2) "A"
-3) "B"
-```
-
 ## Golang
 
 1. Init connection
@@ -39,4 +27,18 @@ rdb := redis.NewClient(&redis.Options{
 		panic(err)
 	}
 	fmt.Println("key", val)
+```
+
+3. get/set list
+
+```go
+
+lentgh, err := rdb.LPush("mylist", []string{"test", "2"}).Result()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("length", lentgh)
+
 ```

@@ -21,15 +21,27 @@ func init() {
 		panic(err)
 	}
 
+	// val, err := rdb.Get("running").Result()
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Println("key", val)
+
+	lentgh, err := rdb.LPush("mylist", []string{"test", "2"}).Result()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("length", lentgh)
+
 	val, err := rdb.Get("running").Result()
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("key", val)
 
-	err = rdb.Set("running", "false", 0).Err()
-	if err != nil {
-		panic(err)
-	}
+	list, err := rdb.LRange("mylist", 0, -1).Result()
 
+	fmt.Println("key", list)
 }
