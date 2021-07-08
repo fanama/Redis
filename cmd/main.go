@@ -1,7 +1,8 @@
 package main
 
 import (
-	_ "github.com/fanama/Redis/package/cache"
+	// _ "github.com/fanama/Redis/package/cache"
+	_ "github.com/fanama/Redis/package/database"
 )
 
 func main() {
