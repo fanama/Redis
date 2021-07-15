@@ -6,7 +6,7 @@
 
 2. extract the package
 
-- > sudo tar -C /usr/local -xzf go1.15.4.linux-amd64.tar.gz
+- > sudo tar -C /usr/local -xzf go1.16.2.linux-amd64.tar.gz
 
 3. add the exec command to *~/.profile*
     
